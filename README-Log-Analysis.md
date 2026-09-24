@@ -42,35 +42,3 @@ It also provides an HTTP status-code summary and checks the MariaDB journal for 
 
 ```text
 127.0.0.1 - - [23/Sep/2026:10:10:07 -0400] "GET /?id=%27%20OR%20%271%27%3D%271 HTTP/1.1" 200 1614 "-" "curl/8.21.0"
-
-## 5. Suspicious Event 2 - Administrative/Login Endpoint Probing
-
-### Timestamp
-
-`23/Sep/2026 10:11:49 -0400`
-
-### Evidence
-
-```text
-127.0.0.1 - - [23/Sep/2026:10:11:49 -0400] "GET /admin HTTP/1.1" 404 146 "-" "curl/8.21.0"
-
-
-## 7. HTTP Status Summary
-
-The analyzed NGINX access log contained:
-
-| HTTP Status | Count |
-|---|---:|
-| 200 | 3 |
-| 404 | 3 |
-
-The three `404` responses correspond to the administrative/login probing and sensitive-file probing requests.
-
-## 8. Database Log Observation
-
-The MariaDB journal contained:
-
-```text
-Sep 22 14:29:00 kali mariadbd[9494]: 2026-09-22 14:29:00 0 [Note] /usr/sbin/mariadbd: ready for connections.
-
-
