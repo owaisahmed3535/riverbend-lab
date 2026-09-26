@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L10,3 L0,6 Z" fill="#333"/>
+    </marker>
+    <style>
+      .box { fill:#f8f9fa; stroke:#333; stroke-width:2; rx:12; }
+      .boundary { fill:none; stroke:#777; stroke-width:2; stroke-dasharray:8 6; rx:15; }
+      .title { font-family:Arial,sans-serif; font-size:24px; font-weight:bold; }
+      .label { font-family:Arial,sans-serif; font-size:18px; font-weight:bold; }
+      .text { font-family:Arial,sans-serif; font-size:15px; }
+      .flow { stroke:#333; stroke-width:2.5; fill:none; marker-end:url(#arrow); }
+      .flowlabel { font-family:Arial,sans-serif; font-size:14px; fill:#222; }
+    </style>
+  </defs>
+
+  <text x="600" y="40" text-anchor="middle" class="title">
+    Riverbend Boutique - System Threat Model
+  </text>
+
+  <rect x="40" y="80" width="1120" height="560" class="boundary"/>
+  <text x="60" y="110" class="label">Riverbend Boutique Lab / Application Boundary</text>
+
+  <rect x="80" y="250" width="180" height="100" class="box"/>
+  <text x="170" y="285" text-anchor="middle" class="label">Client</text>
+  <text x="170" y="312" text-anchor="middle" class="text">Web Browser / User</text>
+  <text x="170" y="335" text-anchor="middle" class="text">HTTP Requests</text>
+
+  <rect x="350" y="180" width="200" height="120" class="box"/>
+  <text x="450" y="215" text-anchor="middle" class="label">NGINX</text>
+  <text x="450" y="242" text-anchor="middle" class="text">Web Server</text>
+  <text x="450" y="265" text-anchor="middle" class="text">Port 80 / HTTP</text>
+  <text x="450" y="287" text-anchor="middle" class="text">Access / Error Logs</text>
+
+  <rect x="350" y="400" width="200" height="120" class="box"/>
+  <text x="450" y="435" text-anchor="middle" class="label">PHP Application</text>
+  <text x="450" y="462" text-anchor="middle" class="text">Riverbend Boutique</text>
+  <text x="450" y="485" text-anchor="middle" class="text">PHP 8.4-FPM</text>
+  <text x="450" y="507" text-anchor="middle" class="text">Product Display</text>
+
+  <rect x="680" y="400" width="200" height="120" class="box"/>
+  <text x="780" y="435" text-anchor="middle" class="label">MariaDB</text>
+  <text x="780" y="462" text-anchor="middle" class="text">riverbend_shop</text>
+  <text x="780" y="485" text-anchor="middle" class="text">Products Table</text>
+  <text x="780" y="507" text-anchor="middle" class="text">5 Seeded Products</text>
+
+  <rect x="900" y="180" width="200" height="120" class="box"/>
+  <text x="1000" y="215" text-anchor="middle" class="label">External Services</text>
+  <text x="1000" y="242" text-anchor="middle" class="text">External API / Payment</text>
+  <text x="1000" y="265" text-anchor="middle" class="text">Future Integration</text>
+  <text x="1000" y="287" text-anchor="middle" class="text">Trust Boundary</text>
+
+  <path d="M260 300 L350 240" class="flow"/>
+  <text x="290" y="250" class="flowlabel">HTTP Request</text>
+
+  <path d="M450 300 L450 400" class="flow"/>
+  <text x="465" y="355" class="flowlabel">FastCGI / PHP</text>
+
+  <path d="M550 460 L680 460" class="flow"/>
+  <text x="585" y="445" class="flowlabel">SQL Query</text>
+
+  <path d="M680 490 L550 490" class="flow"/>
+  <text x="580" y="525" class="flowlabel">Query Result</text>
+
+  <path d="M550 210 L900 210" class="flow"/>
+  <text x="665" y="195" class="flowlabel">API / External Request</text>
+
+  <path d="M900 270 L550 270" class="flow"/>
+  <text x="665" y="290" class="flowlabel">External Response</text>
+
+  <text x="600" y="600" text-anchor="middle" class="text">
+    Trust boundaries, components and primary data flows identified for STRIDE analysis
+  </text>
+</svg>
