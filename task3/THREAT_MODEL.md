@@ -67,3 +67,41 @@ Evidence:
 
 ```text
 127.0.0.1 - - [23/Sep/2026:10:10:07 -0400] "GET /?id=%27%20OR%20%271%27%3D%271 HTTP/1.1" 200 1614 "-" "curl/8.21.0"
+
+
+
+
+## Mitigation and Recommended Controls
+
+### Client
+- Use strong authentication and session management.
+- Validate user input before sending requests to the application.
+- Restrict access to administrative functionality.
+- Protect sensitive information from being displayed to unauthorized users.
+
+### NGINX Web Server
+- Apply secure NGINX configuration and restrict unnecessary paths.
+- Use request filtering and rate limiting to reduce malicious or excessive requests.
+- Restrict access to administrative endpoints.
+- Maintain sufficient access and error logging for investigation.
+
+### PHP Application
+- Use parameterized queries or prepared statements to prevent SQL injection.
+- Validate and sanitize application input.
+- Enforce authorization checks for administrative functions.
+- Avoid exposing sensitive application or system information in responses.
+- Apply secure session and authentication controls.
+
+### MariaDB Database
+- Apply least-privilege permissions to database accounts.
+- Restrict database access to the application and trusted administrative sources.
+- Use strong database authentication credentials.
+- Monitor database activity and maintain appropriate audit logs.
+- Protect sensitive stored information from unauthorized disclosure.
+
+### External Services
+- Use authenticated and encrypted connections for external integrations.
+- Validate data received from external services before processing it.
+- Store integration credentials securely.
+- Apply least privilege to service accounts and API credentials.
+- Monitor failed or unexpected external requests.
