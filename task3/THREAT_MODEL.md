@@ -105,3 +105,16 @@ Evidence:
 - Store integration credentials securely.
 - Apply least privilege to service accounts and API credentials.
 - Monitor failed or unexpected external requests.
+
+
+## Risk Prioritisation
+
+The risk ranking is based on the formula:
+
+`Risk Score = Likelihood × Impact`
+
+The highest-scoring threats are prioritised for attention because they combine a higher estimated likelihood with a higher potential impact. The current highest-scoring threat is the PHP Application tampering threat with a score of 20.
+
+Other high-priority threats include NGINX tampering and denial-of-service threats, as well as several information-disclosure, elevation-of-privilege, spoofing, and tampering threats with scores of 15 or 16.
+
+The `risk-ranking.csv` file provides the complete ranking of all identified threats in descending order of risk score.
