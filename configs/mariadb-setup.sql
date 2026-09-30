@@ -1,6 +1,6 @@
 CREATE DATABASE riverbend_shop;
-CREATE USER 'shopuser'@'localhost' IDENTIFIED BY 'StrongPass123!';
-GRANT ALL PRIVILEGES ON riverbend_shop.* TO 'shopuser'@'localhost';
+CREATE USER 'shopuser'@'localhost' IDENTIFIED BY 'CHANGE_ME_IN_LOCAL_LAB';
+GRANT SELECT ON riverbend_shop.* TO 'shopuser'@'localhost';
 FLUSH PRIVILEGES;
 
 USE riverbend_shop;

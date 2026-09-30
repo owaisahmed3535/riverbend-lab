@@ -1,5 +1,25 @@
 <?php
-$conn = new mysqli("localhost", "shopuser", "StrongPass123!", "riverbend_shop");
+$env = [];
+$env_file = __DIR__ . '/../.env';
+
+if (is_readable($env_file)) {
+    foreach (file($env_file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES) as $line) {
+        $line = trim($line);
+        if ($line === '' || str_starts_with($line, '#') || !str_contains($line, '=')) {
+            continue;
+        }
+
+        [$key, $value] = explode('=', $line, 2);
+        $env[trim($key)] = trim($value);
+    }
+}
+
+$db_host = $env['DB_HOST'] ?? 'localhost';
+$db_user = $env['DB_USER'] ?? '';
+$db_password = $env['DB_PASSWORD'] ?? '';
+$db_name = $env['DB_NAME'] ?? '';
+
+$conn = new mysqli($db_host, $db_user, $db_password, $db_name);
 if ($conn->connect_error) {
     die("DB connection failed: " . $conn->connect_error);
 }

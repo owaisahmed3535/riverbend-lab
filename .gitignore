@@ -1,0 +1,6 @@
+.env
+.env.*
+!.env.example
+*.log
+*.mp4
+!task4/demo.mp4

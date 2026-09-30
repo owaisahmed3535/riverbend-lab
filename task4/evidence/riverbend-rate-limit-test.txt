@@ -1,0 +1,10 @@
+=== RATE LIMIT VALIDATION ===
+Date: Wed Sep 30 10:23:17 AM EDT 2026
+
+Configuration:
+limit_req_zone rate=5r/s
+limit_req burst=10 nodelay
+
+30 rapid requests:
+     12 200
+     18 503
