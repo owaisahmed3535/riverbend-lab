@@ -88,3 +88,18 @@ After recording, add the video as `task4/demo.mp4` or replace this section with 
 ### Final Handover
 
 The `task4/` directory contains the mitigation documentation, deployment checklist, demonstration script, and supporting evidence for final review.
+
+## Configuration and Deployment
+
+The application database credentials are kept outside source-controlled application code.
+
+1. Copy `.env.example` to `.env`.
+2. Set the local database password in `.env`.
+3. Keep `.env` out of Git because it contains the local database credential.
+4. Ensure the PHP application can read the environment file from the deployment location.
+5. Import `configs/mariadb-setup.sql` when creating the lab database.
+6. Validate the NGINX configuration with `sudo nginx -t`.
+7. Reload NGINX after approved configuration changes.
+8. Verify the storefront with `curl http://127.0.0.1/`.
+
+The repository SQL template uses a placeholder password and SELECT-only database access. The actual lab credential must be configured locally and must not be committed to the repository.
