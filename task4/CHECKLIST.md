@@ -52,10 +52,10 @@ This checklist records the mitigation, verification, documentation, and handover
 
 ## Demo and Final Handover
 
-- [ ] Record a short mitigation demonstration of no more than 5 minutes.
-- [ ] Demonstrate at least one mitigation being applied and verified in the lab.
-- [ ] Add the final demo video or demo link to the repository.
-- [ ] Update the main README with the Task 4 executive summary and artefact links.
+- [x] Record a short mitigation demonstration of no more than 5 minutes.
+- [x] Demonstrate at least one mitigation being applied and verified in the lab.
+- [x] Add the final demo video or demo link to the repository.
+- [x] Update the main README with the Task 4 executive summary and artefact links.
 - [ ] Review all Task 4 documentation for clarity and consistency.
 - [ ] Review `git status` before final submission.
 - [ ] Commit the completed Task 4 artefacts.

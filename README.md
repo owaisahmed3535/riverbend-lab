@@ -81,10 +81,13 @@ The mitigations were validated without breaking the normal storefront. The `/adm
 
 ### Demo
 
-The final demonstration video should be kept at 5 minutes or less and should show one mitigation being applied or active and then verified in the lab.
+The final mitigation demonstration is included in the repository as:
 
-After recording, add the video as `task4/demo.mp4` or replace this section with the submitted video link.
+- `task4/demo.mp4` — 3-minute-18-second demonstration of the NGINX administrative-path restriction.
 
+The demonstration shows the restricted `/admin` path returning HTTP 403 Forbidden, followed by a storefront regression check confirming that the normal Riverbend Boutique application remains functional. The NGINX configuration syntax is also validated with `sudo nginx -t`.
+
+The demonstration was recorded in the isolated Riverbend lab environment and is within the required 5-minute limit. 
 ### Final Handover
 
 The `task4/` directory contains the mitigation documentation, deployment checklist, demonstration script, and supporting evidence for final review.
